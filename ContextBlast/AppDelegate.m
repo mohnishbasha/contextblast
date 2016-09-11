@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CloudSight.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [CloudSightConnection sharedInstance].consumerKey = @"your-key";
+    [CloudSightConnection sharedInstance].consumerSecret = @"your-secret";
+    
     return YES;
 }
 

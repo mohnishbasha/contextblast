@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0795C6AB294B06CAB717BF33 /* libPods-ContextBlast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBF9E3243576761982186A6 /* libPods-ContextBlast.a */; };
+		127230081D84D4DD0056FFAD /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 127230071D84D4DD0056FFAD /* CameraOverlayView.m */; };
+		1272300A1D84D4F40056FFAD /* CameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127230091D84D4F40056FFAD /* CameraOverlayView.xib */; };
+		1272300D1D84DCC80056FFAD /* ImageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1272300C1D84DCC80056FFAD /* ImageDetailsViewController.m */; };
 		12A6FEEB1D84CBC6004EBECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A6FEEA1D84CBC6004EBECD /* main.m */; };
 		12A6FEEE1D84CBC6004EBECD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A6FEED1D84CBC6004EBECD /* AppDelegate.m */; };
 		12A6FEF11D84CBC6004EBECD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A6FEF01D84CBC6004EBECD /* ViewController.m */; };
@@ -16,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		127230061D84D4DD0056FFAD /* CameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayView.h; sourceTree = "<group>"; };
+		127230071D84D4DD0056FFAD /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayView.m; sourceTree = "<group>"; };
+		127230091D84D4F40056FFAD /* CameraOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlayView.xib; sourceTree = "<group>"; };
+		1272300B1D84DCC80056FFAD /* ImageDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailsViewController.h; sourceTree = "<group>"; };
+		1272300C1D84DCC80056FFAD /* ImageDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetailsViewController.m; sourceTree = "<group>"; };
 		12A6FEE61D84CBC6004EBECD /* ContextBlast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContextBlast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A6FEEA1D84CBC6004EBECD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12A6FEEC1D84CBC6004EBECD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +35,9 @@
 		12A6FEF51D84CBC6004EBECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12A6FEF81D84CBC6004EBECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12A6FEFA1D84CBC6004EBECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		303BE5037E2BFB995C95E68A /* Pods-ContextBlast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContextBlast.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContextBlast/Pods-ContextBlast.release.xcconfig"; sourceTree = "<group>"; };
+		5EBF9E3243576761982186A6 /* libPods-ContextBlast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContextBlast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0B0AF10F115D30A4F82BFD /* Pods-ContextBlast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContextBlast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContextBlast/Pods-ContextBlast.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0795C6AB294B06CAB717BF33 /* libPods-ContextBlast.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +57,8 @@
 			children = (
 				12A6FEE81D84CBC6004EBECD /* ContextBlast */,
 				12A6FEE71D84CBC6004EBECD /* Products */,
+				2132CB374ADA5123647502F4 /* Pods */,
+				50C19D21E6654003724AF531 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,11 @@
 				12A6FEF71D84CBC6004EBECD /* LaunchScreen.storyboard */,
 				12A6FEFA1D84CBC6004EBECD /* Info.plist */,
 				12A6FEE91D84CBC6004EBECD /* Supporting Files */,
+				127230061D84D4DD0056FFAD /* CameraOverlayView.h */,
+				127230071D84D4DD0056FFAD /* CameraOverlayView.m */,
+				127230091D84D4F40056FFAD /* CameraOverlayView.xib */,
+				1272300B1D84DCC80056FFAD /* ImageDetailsViewController.h */,
+				1272300C1D84DCC80056FFAD /* ImageDetailsViewController.m */,
 			);
 			path = ContextBlast;
 			sourceTree = "<group>";
@@ -79,6 +99,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2132CB374ADA5123647502F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B0AF10F115D30A4F82BFD /* Pods-ContextBlast.debug.xcconfig */,
+				303BE5037E2BFB995C95E68A /* Pods-ContextBlast.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		50C19D21E6654003724AF531 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EBF9E3243576761982186A6 /* libPods-ContextBlast.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +123,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12A6FEFD1D84CBC6004EBECD /* Build configuration list for PBXNativeTarget "ContextBlast" */;
 			buildPhases = (
+				7B0680E1AC9387B57CA26BE7 /* Check Pods Manifest.lock */,
 				12A6FEE21D84CBC6004EBECD /* Sources */,
 				12A6FEE31D84CBC6004EBECD /* Frameworks */,
 				12A6FEE41D84CBC6004EBECD /* Resources */,
+				F766A6D349E9883975488ED1 /* Embed Pods Frameworks */,
+				730BA8E0E9BF045DEE0911C8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,6 +150,7 @@
 				TargetAttributes = {
 					12A6FEE51D84CBC6004EBECD = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = NWSYHFM8PA;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1272300A1D84D4F40056FFAD /* CameraOverlayView.xib in Resources */,
 				12A6FEF91D84CBC6004EBECD /* LaunchScreen.storyboard in Resources */,
 				12A6FEF61D84CBC6004EBECD /* Assets.xcassets in Resources */,
 				12A6FEF41D84CBC6004EBECD /* Main.storyboard in Resources */,
@@ -145,13 +187,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		730BA8E0E9BF045DEE0911C8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContextBlast/Pods-ContextBlast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B0680E1AC9387B57CA26BE7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F766A6D349E9883975488ED1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContextBlast/Pods-ContextBlast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		12A6FEE21D84CBC6004EBECD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127230081D84D4DD0056FFAD /* CameraOverlayView.m in Sources */,
 				12A6FEF11D84CBC6004EBECD /* ViewController.m in Sources */,
 				12A6FEEE1D84CBC6004EBECD /* AppDelegate.m in Sources */,
+				1272300D1D84DCC80056FFAD /* ImageDetailsViewController.m in Sources */,
 				12A6FEEB1D84CBC6004EBECD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,8 +362,10 @@
 		};
 		12A6FEFE1D84CBC6004EBECD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC0B0AF10F115D30A4F82BFD /* Pods-ContextBlast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NWSYHFM8PA;
 				INFOPLIST_FILE = ContextBlast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamsappls.ContextBlast;
@@ -281,8 +375,10 @@
 		};
 		12A6FEFF1D84CBC6004EBECD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 303BE5037E2BFB995C95E68A /* Pods-ContextBlast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NWSYHFM8PA;
 				INFOPLIST_FILE = ContextBlast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamsappls.ContextBlast;
@@ -309,6 +405,7 @@
 				12A6FEFF1D84CBC6004EBECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
