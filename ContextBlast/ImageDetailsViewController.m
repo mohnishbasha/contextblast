@@ -9,14 +9,18 @@
 #import "ImageDetailsViewController.h"
 #import "CloudSight.h"
 #import <CoreLocation/CoreLocation.h>
+#import "ContextBlast-Swift.h"
+#import "ImageContextTableViewController.h"
+#import "ImageContext.h"
 
-@interface ImageDetailsViewController ()
+@interface ImageDetailsViewController () <VisualRecognitionWrapperDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 @property (nonatomic, weak) IBOutlet UIView *laserView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *laserYConstraint;
 @property (nonatomic) NSTimer *laserTimer;
 @property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) VisualRecognitionWrapper *visualWrapper;
 
 @end
 
@@ -27,8 +31,8 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    [self.locationManager requestWhenInUseAuthorization];
-     [self.locationManager requestLocation];
+    //[self.locationManager requestWhenInUseAuthorization];
+    //[self.locationManager requestLocation];
     
     self.imageView.image = self.image;
     
@@ -37,6 +41,8 @@
     self.laserView.layer.shadowColor = [[UIColor whiteColor] CGColor];
     self.laserView.layer.shadowOffset = CGSizeMake(2,2);
     //self.laserView.layer.shadowRadius = 10;
+    
+    [self searchImage:self.image];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -65,6 +71,26 @@
     }
 }
 
+- (void)searchImage:(UIImage *)image {
+    NSData *imageData = UIImageJPEGRepresentation(self.image, 0.7);
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Image.png"];
+    NSURL *url = [NSURL fileURLWithPath:filePath];
+    // Save image.
+    if ([UIImagePNGRepresentation(self.image) writeToFile:filePath atomically:YES]) {
+        self.laserTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/60.0
+                                                           target:self
+                                                         selector:@selector(updateLaserPosition)
+                                                         userInfo:nil
+                                                          repeats:YES];
+        
+        self.visualWrapper = [[VisualRecognitionWrapper alloc] init];
+        self.visualWrapper.delegate = self;
+        [self.visualWrapper fetchImage:url];
+    }
+}
+
 - (void)searchWithImage:(UIImage *)image location:(CLLocation *)location {
     NSString *deviceIdentifier = @"";  // This can be any unique identifier per device, and is optional - we like to use UUIDs
     
@@ -73,18 +99,35 @@
     CGPoint focalPoint = CGPointMake(0, 0);
     NSData *imageData = UIImageJPEGRepresentation(self.image, 0.7);
     
-    // Create the actual query object
-    CloudSightQuery *query = [[CloudSightQuery alloc] initWithImage:imageData
-                                                         atLocation:focalPoint
-                                                       withDelegate:self
-                                                        atPlacemark:location
-                                                       withDeviceId:deviceIdentifier];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Image.png"];
+    NSURL *url = [NSURL fileURLWithPath:filePath];
+    // Save image.
+    if ([UIImagePNGRepresentation(self.image) writeToFile:filePath atomically:YES]) {
+        self.laserTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/60.0
+                                                           target:self
+                                                         selector:@selector(updateLaserPosition)
+                                                         userInfo:nil
+                                                          repeats:YES];
+        
+        self.visualWrapper = [[VisualRecognitionWrapper alloc] init];
+        self.visualWrapper.delegate = self;
+        [self.visualWrapper fetchImage:url];
+    }
     
-    self.laserTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES block:^(NSTimer *timer) {
-        [self updateLaserPosition];
-    }];
+    // Create the actual query object
+//    CloudSightQuery *query = [[CloudSightQuery alloc] initWithImage:imageData
+//                                                         atLocation:focalPoint
+//                                                       withDelegate:self
+//                                                        atPlacemark:location
+//                                                       withDeviceId:deviceIdentifier];
+//    
+    
+    
+    
+    
     // Start the query process
-    [query start];
+    //[query start];
 }
 
 #pragma mark CloudSightQueryDelegate
@@ -107,6 +150,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    [manager stopUpdatingLocation];
     NSLog(@"%@", [locations lastObject]);
     [self searchWithImage:self.image location:[locations firstObject]];
 }
@@ -114,6 +158,20 @@
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error{
     
+}
+
+#pragma mark - Image Delegate
+- (void)imageRecognized:(NSString *)context {
+    ImageContextTableViewController *imageContextViewController = [[UIStoryboard storyboardWithName:@"Main"
+                               bundle:NULL] instantiateViewControllerWithIdentifier:@"ImageContextTableViewController"];
+    
+    ImageContext *imageContext = [[ImageContext alloc] init];
+    imageContext.image = self.image;
+    imageContext.title = context;
+    
+    imageContextViewController.imageContext = imageContext;
+    
+    [self.navigationController pushViewController:imageContextViewController animated:YES];
 }
 
 /*

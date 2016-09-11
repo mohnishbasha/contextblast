@@ -10,4 +10,7 @@
 
 @interface LeftMessageTableViewCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *image;
+@property (nonatomic, weak) IBOutlet UILabel *label;
+
 @end

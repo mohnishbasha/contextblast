@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageContext.h"
 
-@interface ImageContextTableViewController : UITableViewController
+@interface ImageContextTableViewController : UIViewController
+
+@property (nonatomic) ImageContext *imageContext;
 
 @end

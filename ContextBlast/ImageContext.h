@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ImageContext : NSObject
+
+@property (nonatomic) UIImage *image;
+@property (nonatomic) NSString *title;
 
 @end

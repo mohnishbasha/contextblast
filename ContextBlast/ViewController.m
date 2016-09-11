@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CameraOverlayView.h"
 #import "ImageDetailsViewController.h"
+#import "ContextBlast-Bridging-Header.h"
 
 @interface ViewController () <UIImagePickerControllerDelegate>
 
@@ -20,12 +21,17 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     self.imagePickerController = [[UIImagePickerController alloc] init];
     self.imagePickerController.delegate = self;
-    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
     //self.overlayView = [[[NSBundle mainBundle] loadNibNamed:@"CameraOverlayView" owner:self options:nil] objectAtIndex:0];
     
-    self.imagePickerController.cameraOverlayView = self.overlayView;
+    //self.imagePickerController.cameraOverlayView = self.overlayView;
     [self.view addSubview:self.imagePickerController.view];
     [super viewDidLoad];
 }
@@ -61,10 +67,6 @@
     viewController.image = image;
     
     [self.navigationController pushViewController:viewController animated:YES];
-
-//    [picker dismissViewControllerAnimated:YES completion:^{
-//        
-//    }];
 }
 
 @end

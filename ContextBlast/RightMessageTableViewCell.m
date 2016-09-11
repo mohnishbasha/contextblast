@@ -10,4 +10,10 @@
 
 @implementation RightMessageTableViewCell
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.label.layer.cornerRadius = 15;
+    self.label.layer.masksToBounds = YES;
+}
+
 @end
