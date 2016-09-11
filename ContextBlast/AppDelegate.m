@@ -17,8 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [CloudSightConnection sharedInstance].consumerKey = @"your-key";
-    [CloudSightConnection sharedInstance].consumerSecret = @"your-secret";
+    [CloudSightConnection sharedInstance].consumerKey = @"NWhnKnq8GTrx1zT4yV3_sQ";
+    [CloudSightConnection sharedInstance].consumerSecret = @"DWx0y8kZGoYPbVwygn4swg";
     
     return YES;
 }
