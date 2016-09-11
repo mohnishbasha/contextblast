@@ -44,7 +44,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>for speaking</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>Launch</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
